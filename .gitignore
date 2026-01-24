@@ -1,0 +1,12 @@
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+cmake-build-*/
+*.log
+*.tmp
+*.swp
+.kotlin
+
+.venv
