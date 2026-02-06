@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: var(--red-border);
+}
+
+:root {
+  --red-border: solid red 2px;
+}
+
+/*HEADER*/
+/*em rem vh vw gap(, , ,)*/
+
+/* HEADER */
+header {
+  position: relative; /* referencia para nav absoluto */
+  height: 150px; /* ajusta según necesites */
+  background: linear-gradient(to right, #181873, #9c50e6, #ba89e6);
+  display: flex;
+  justify-content: left; /* centra horizontalmente el título */
+  align-items: center; /* centra verticalmente el título */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* TÍTULO */
+h1 {
+  margin: 0;
+  text-align: center;
+  font-size: 50px;
+  color: white;
+}
+
+/* NAV abajo a la derecha */
+.navHeader {
+  position: absolute;
+  bottom: 15px; /* distancia desde el borde inferior */
+  right: 20px; /* distancia desde el borde derecho */
+  display: flex;
+  gap: 12px;
+}
+
+/* Cada enlace dentro del nav */
+.navHeader a {
+  display: flex;
+  flex-direction: column; /* logo arriba, texto abajo */
+  align-items: center; /* centra el texto debajo del logo */
+  text-decoration: none;
+  color: black;
+  gap: 4px;
+}
+
+/* Logos pequeños */
+.navHeader a img {
+  width: 40px;
+  height: auto;
+}
+
+/* Texto debajo de los logos */
+.navHeader a p {
+  margin: 0;
+  font-size: 15px;
+  text-align: center;
+}
+
+/* Hover opcional */
+.navHeader a:hover img {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+
+/*!*!* Responsive para móviles *!*!*/
+/*@media (max-width: 600px) {*/
+/*  header {*/
+/*    height: 200px;*/
+/*    padding: 10px;*/
+/*  }*/
+
+/*  #tituloHeader {*/
+/*    font-size: 20px;*/
+/*  }*/
+
+/*  .navHeader a img {*/
+/*    width: 30px;*/
+/*  }*/
+
+/*  .navHeader a p {*/
+/*    font-size: 10px;*/
+/*  }*/
+
+/*  .navHeader {*/
+/*    gap: 8px;*/
+/*  }*/
+/*}*/
