@@ -21,29 +21,41 @@
     <!--Meter imagen-->
   </head>
   <body>
+    <!--Creamos varios inputs de type radio para poder blockear las secciones que no queremos que se vean
+    y de sensación de que son varias páginas distintas.
+
+    Tiene que estar fuera del main, ya que en css usaremos ~ main, lo que hace que busque la siguiente etiqueta
+    pedida (main en este caso), y la etiqueta tiene que estar a la misma altura que desde donde lo estamos buscando.
+
+    Ponemos el mismo nombre en todos los inputs, ya que en type radio no permite tener dos elementos del mismo nombre
+    seleccionado.-->
+    <input type="radio" name="elegirSeccion" id="paginaInicio" checked />
+    <!-- Usamos checked para que sea el escogido por defecto-->
+    <input type="radio" name="elegirSeccion" id="sobreMi" />
+    <input type="radio" name="elegirSeccion" id="proyectos" />
+    <input type="radio" name="elegirSeccion" id="contacto" />
+    <input type="radio" name="elegirSeccion" id="boxeo" />
+
+    <!--En el header pondremos un nav con una lista con las diferentes secciones de la página-->
     <header>
-      <h1 id="tituloHeader">David López Zurrón</h1>
+      <h2 id="tituloHeader">David López Zurrón</h2>
       <nav class="navHeader">
-        <a href="#SeccionSobreMi">
-          <img alt="SobreMi" src="assets/img/usuario.png" />
-          <p>Sobre mí</p>
-        </a>
-        <a href="#SeccionProyectos">
-          <img alt="Proyectos" src="assets/img/idea.png" />
-          <p>Página principal</p>
-        </a>
-        <a href="#SeccionContacto">
-          <img alt="Contacto" src="assets/img/llamada-telefonica.png" />
-          <p>Contacto</p>
-        </a>
-        <a href="#SeccionBoxeo">
-          <img alt="Boxeo" src="assets/img/guantes-de-boxeo.png" />
-          <p>Boxeo</p>
-        </a>
+        <ul>
+          <li><label for="paginaInicio">Inicio</label></li>
+          <li><label for="sobreMi">Sobre Mí</label></li>
+          <li><label for="proyectos">Proyectos</label></li>
+          <li><label for="contacto">Contacto</label></li>
+          <li><label for="boxeo">Boxeo</label></li>
+        </ul>
       </nav>
     </header>
+
     <main>
-      <section id="SeccionSobreMi">
+      <section id="inicio">
+        <h1>Bienvenido al portfolio de David</h1>
+        <p id="subtitulo">Futuro desarrollador fullstack</p>
+      </section>
+      <section id="seccionSobreMi">
         <h2>Sobre mí</h2>
         <h3>¿Quién soy?</h3>
         <p>
@@ -66,7 +78,7 @@
           nunca. Es un deporte que me aporta tranquilidad, seguridad, un buen
           estado físico y una ayuda para desconectar de todo y recargar energía
           (mentalmente claro). La última sección estará dedicada a algunos de
-          los videos míos boxeando, ¡te dejo <a href="#SeccionBoxeo">aquí</a> el
+          los videos míos boxeando, ¡te dejo <a href="#seccionBoxeo">aquí</a> el
           link para que vayas ya a verlo! (en mi Instagram también puedes
           encontrarlos😉)
         </p>
@@ -78,7 +90,7 @@
           League of Legends (LoL), Valorant, Dying Light y Genshin Impact.
         </p>
       </section>
-      <section id="SeccionProyectos">
+      <section id="seccionProyectos">
         <h2>Proyectos</h2>
         <p>
           Como ya he dicho antes, soy un estudiante de DAW con poca experiencia
@@ -86,13 +98,13 @@
           relevante que enseñar, ¡aparecerá por aquí!
         </p>
       </section>
-      <section id="SeccionContacto">
+      <section id="seccionContacto">
         <h2>Contacto</h2>
         <p>
           Mi mail:
           <a
             href="mailto:davidlopezzurron@gmail.com?subject=Contacto%20Portfolio&body=Escríbeme%20sobre%20lo%20que%20quieras%20aquí."
-          >davidlopezzurron@gmail.com</a
+            >davidlopezzurron@gmail.com</a
           >
         </p>
         <p>
@@ -100,7 +112,7 @@
           allí!
         </p>
       </section>
-      <section id="SeccionBoxeo">
+      <section id="seccionBoxeo">
         <h2>Boxeo</h2>
         <p>
           Llevo desde 2022 practicando boxeo en un club llamado
@@ -172,47 +184,11 @@
             </li>
           </ul>
         </section>
-        <h4>Interclubes</h4>
-        <section>
-          <ul>
-            <li>
-              <video controls preload="metadata">
-                <source
-                  src="assets/vd/Sparring/Interclub/Video%20Round%201%20Interclub%20Parte%201.mp4"
-                  type="video/mp4"
-                />
-              </video>
-            </li>
-            <li>
-              <video controls preload="metadata">
-                <source
-                  src="assets/vd/Sparring/Interclub/Video%20Round%201%20Interclub%20Parte%202.mp4"
-                  type="video/mp4"
-                />
-              </video>
-            </li>
-            <li>
-              <video controls preload="metadata">
-                <source
-                  src="assets/vd/Sparring/Interclub/Video%20Round%202.mp4"
-                  type="video/mp4"
-                />
-              </video>
-            </li>
-            <li>
-              <video controls preload="metadata">
-                <source
-                  src="assets/vd/Sparring/Interclub/Video%20Round%203.mp4"
-                  type="video/mp4"
-                />
-              </video>
-            </li>
-          </ul>
-        </section>
       </section>
     </main>
+
     <footer>
-      <nav class="redes">
+      <nav id="redes">
         <ul>
           <li>
             <a
@@ -221,7 +197,7 @@
               rel="noopener noreferrer"
               aria-label="GitHub de David"
             >
-              <img alt="GitHub" src="assets/img/LogoGitHub.png" />
+              <img alt="GitHub" src="assets/img/github.png" />
             </a>
           </li>
           <li>
@@ -231,7 +207,7 @@
               rel="noopener noreferrer"
               aria-label="Instagram de David"
             >
-              <img alt="Instagram" src="assets/img/LogoInstagram.png" />
+              <img alt="Instagram" src="assets/img/instagram.png" />
             </a>
           </li>
           <li>
@@ -241,7 +217,7 @@
               rel="noopener noreferrer"
               target="_blank"
             >
-              <img alt="X / Twitter" src="assets/img/LogoX.png" />
+              <img alt="X / Twitter" src="assets/img/x.jpg" />
             </a>
           </li>
           <li>
@@ -251,13 +227,13 @@
               rel="noopener noreferrer"
               aria-label="TikTok de David"
             >
-              <img alt="TikTok" src="assets/img/LogoTiktok.avif" />
+              <img alt="TikTok" src="assets/img/tik-tok.png" />
             </a>
           </li>
         </ul>
       </nav>
 
-      <div class="copyright">
+      <div id="copyright">
         <p>© Portfolio de David López Zurrón</p>
       </div>
     </footer>

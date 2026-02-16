@@ -1,132 +1,156 @@
+/*Imports de fuentes*/
 @font-face {
   font-family: LeagueSpartan;
-  src: url('./assets/fonts/LeagueSpartan/LeagueSpartan-VariableFont_wght.ttf') format('truetype'),
-  url('./assets/fonts/LeagueSpartan/LeagueSpartan-VariableFont_wght.ttf') format('truetype');
+  src:
+    url("./assets/fonts/LeagueSpartan/LeagueSpartan-VariableFont_wght.ttf")
+      format("truetype"),
+    url("./assets/fonts/LeagueSpartan/LeagueSpartan-VariableFont_wght.ttf")
+      format("truetype");
 }
 
 @font-face {
   font-family: TiltNeon;
-  src: url("./assets/fonts/TiltNeon/TiltNeon-Regular-VariableFont_XROT,YROT.ttf") format("truetype"),
-  url("./assets/fonts/TiltNeon/TiltNeon-Regular-VariableFont_XROT,YROT.ttf") format("truetype");
+  src:
+    url("./assets/fonts/TiltNeon/TiltNeon-Regular-VariableFont_XROT,YROT.ttf")
+      format("truetype"),
+    url("./assets/fonts/TiltNeon/TiltNeon-Regular-VariableFont_XROT,YROT.ttf")
+      format("truetype");
+}
+
+/*Variables*/
+:root {
+  /*Fuentes*/
+  --fuente-principal: TiltNeon;
+  --fuente-headers: LeagueSpartan;
+
+  /*Color*/
+  --color-texto: #e8e8e8;
+  --color-header: #0f172a;
+  --color-body: #1e293b;
+  --color-footer: #0f172a;
+  --color-hover: #8b5cf6;
+
+  /*Extra*/
+  --red-border: solid red 2px;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  border: var(--red-border);
+  /*border: var(--red-border);*/
+  color: white;
 }
-
-:root {
-  --red-border: solid red 2px;
-  --fuente-principal: TiltNeon, serif;
-  --fuente-headers: LeagueSpartan, serif;
-  --color-texto: #F9FAFB;
-}
-
-/*em rem vh vw gap(, , ,)*/
 
 /* HEADER */
 header {
   position: relative; /* referencia para nav absoluto */
-  height: 150px; /* ajusta según necesites */
-  background-color: #1F2937;
+  height: 60px;
+  background: var(--color-header);
   display: flex;
-  justify-content: left; /* centra horizontalmente el título */
-  align-items: center; /* centra verticalmente el título */
   padding: 20px;
-  box-sizing: border-box;
+  border-bottom: #8a8a8a 1px solid;
+}
 
+/*Hacemos invisibles los inputs para que no aparezcan en
+la pagina pero si funcionen*/
+body input {
+  display: none;
 }
 
 /* TÍTULO */
-h1 {
-  font-family: var(--fuente-headers);
-  margin: 0;
-  text-align: center;
-  font-size: 50px;
+#tituloHeader {
   color: white;
+  font-size: 35px;
+  font-family: var(--fuente-headers), serif;
 }
 
-/* NAV abajo a la derecha */
-.navHeader {
-  position: absolute;
-  bottom: 15px; /* distancia desde el borde inferior */
-  right: 20px; /* distancia desde el borde derecho */
+header {
   display: flex;
-  gap: 12px;
-  background;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  height: 60px;
+  background: var(--color-header);
+  border-bottom: #8a8a8a 1px solid;
 }
 
-/* Cada enlace dentro del nav */
-.navHeader a {
+.navHeader ul {
+  font-family: var(--fuente-principal), serif;
   display: flex;
-  flex-direction: column; /* logo arriba, texto abajo */
-  align-items: center; /* centra el texto debajo del logo */
-  text-decoration: none;
-  color: black;
-  gap: 4px;
+  list-style: none;
+  padding: 0;
+  gap: 15px;
 }
 
-/* Logos pequeños */
-.navHeader a img {
-  width: 40px;
-  height: auto;
-}
-
-/* Texto debajo de los logos */
-.navHeader a p {
+.navHeader ul li {
   margin: 0;
   font-size: 15px;
   text-align: center;
+  color: white;
+  transition: transform 0.3s;
 }
 
-/* Hover opcional */
-.navHeader a:hover img {
+.navHeader ul li:hover {
+  margin: 0;
   transform: scale(1.1);
-  transition: transform 0.2s ease;
+  text-align: center;
 }
 
-/*!*!* Responsive para móviles *!*!*/
-/*@media (max-width: 600px) {*/
-/*  header {*/
-/*    height: 200px;*/
-/*    padding: 10px;*/
-/*  }*/
-
-/*  #tituloHeader {*/
-/*    font-size: 20px;*/
-/*  }*/
-
-/*  .navHeader a img {*/
-/*    width: 30px;*/
-/*  }*/
-
-
-/*  .navHeader a p {*/
-/*    font-size: 10px;*/
-/*  }*/
-
-/*  .navHeader {*/
-/*    gap: 8px;*/
-/*  }*/
-/*}*/
-
+.navHeader ul li label:hover {
+  color: var(--color-hover);
+}
 /*Body*/
+body {
+  background-color: var(--color-body);
+}
+
 h2 {
-  font-family: var(--fuente-headers);
+  font-family: var(--fuente-headers), serif;
 }
 
 h3 {
-  font-family: var(--fuente-headers);
-}
-
-h4 {
-  font-family: var(--fuente-headers);
+  font-family: var(--fuente-headers), serif;
 }
 
 p {
-  font-family: var(--fuente-principal);
+  font-family: var(--fuente-principal), serif;
 }
 
 /*footer*/
+footer {
+  display: flex;
+  justify-content: space-between; /* Separación máxima entre elementos */
+  align-items: center; /* Centrado vertical */
+  padding: 10px 20px;
+  background-color: var(--color-footer);
+  border-top: #8a8a8a 1px solid; /* Color de fondo opcional */
+}
+
+#redes ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  justify-content: right;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+#redes li img {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s;
+  border-radius: 30%;
+}
+
+#redes li img:hover {
+  transform: scale(1.2); /* Efecto al pasar el mouse */
+}
+
+#copyright {
+  display: flex;
+  text-align: left;
+  font-size: 15px;
+  color: white;
+}
