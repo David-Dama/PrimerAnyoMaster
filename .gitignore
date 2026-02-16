@@ -8,5 +8,7 @@ cmake-build-*/
 *.tmp
 *.swp
 .kotlin
-
 .venv
+node_modules/
+package.json
+package-lock.json
