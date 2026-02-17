@@ -22,13 +22,13 @@
   </head>
   <body>
     <!--Creamos varios inputs de type radio para poder blockear las secciones que no queremos que se vean
-    y de sensación de que son varias páginas distintas.
+y de sensación de que son varias páginas distintas.
 
-    Tiene que estar fuera del main, ya que en css usaremos ~ main, lo que hace que busque la siguiente etiqueta
-    pedida (main en este caso), y la etiqueta tiene que estar a la misma altura que desde donde lo estamos buscando.
+Tiene que estar fuera del main, ya que en css usaremos ~ main, lo que hace que busque la siguiente etiqueta
+pedida (main en este caso), y la etiqueta tiene que estar a la misma altura que desde donde lo estamos buscando.
 
-    Ponemos el mismo nombre en todos los inputs, ya que en type radio no permite tener dos elementos del mismo nombre
-    seleccionado.-->
+Ponemos el mismo nombre en todos los inputs, ya que en type radio no permite tener dos elementos del mismo nombre
+seleccionado.-->
     <input type="radio" name="elegirSeccion" id="paginaInicio" checked />
     <!-- Usamos checked para que sea el escogido por defecto-->
     <input type="radio" name="elegirSeccion" id="sobreMi" />
@@ -39,6 +39,7 @@
     <!--En el header pondremos un nav con una lista con las diferentes secciones de la página-->
     <header>
       <h2 id="tituloHeader">David López Zurrón</h2>
+
       <nav class="navHeader">
         <ul>
           <li><label for="paginaInicio">Inicio</label></li>
@@ -51,10 +52,11 @@
     </header>
 
     <main>
-      <section id="inicio">
+      <section id="seccionInicio">
         <h1>Bienvenido al portfolio de David</h1>
         <p id="subtitulo">Futuro desarrollador fullstack</p>
       </section>
+
       <section id="seccionSobreMi">
         <h2>Sobre mí</h2>
         <h3>¿Quién soy?</h3>
@@ -90,6 +92,7 @@
           League of Legends (LoL), Valorant, Dying Light y Genshin Impact.
         </p>
       </section>
+
       <section id="seccionProyectos">
         <h2>Proyectos</h2>
         <p>
@@ -98,6 +101,7 @@
           relevante que enseñar, ¡aparecerá por aquí!
         </p>
       </section>
+
       <section id="seccionContacto">
         <h2>Contacto</h2>
         <p>
@@ -112,13 +116,14 @@
           allí!
         </p>
       </section>
+
       <section id="seccionBoxeo">
         <h2>Boxeo</h2>
         <p>
-          Llevo desde 2022 practicando boxeo en un club llamado
-          <a href="">Club Boxeo Kronos</a>, y es sin duda el mejor club en el
-          que he podido acabar. Por si os interesa, os dejo algunos videos de mí
-          mismo haciendo unas series y unos sparrings, ¡espero que os gusten!
+          Llevo desde 2022 practicando boxeo en un club llamado Club Boxeo
+          Kronos, y es sin duda el mejor club en el que he podido acabar. Por si
+          os interesa, os dejo algunos videos de mí mismo haciendo unas series y
+          unos sparrings, ¡espero que os gusten!
         </p>
         <h3>Series</h3>
         <ul>
@@ -128,26 +133,31 @@
               Tu navegador no soporta el vídeo.
             </video>
           </li>
+
           <li>
             <video controls preload="metadata">
               <source src="assets/vd/Series/Serie%202.mp4" type="video/mp4" />
             </video>
           </li>
+
           <li>
             <video controls preload="metadata">
               <source src="assets/vd/Series/Serie%203.mp4" type="video/mp4" />
             </video>
           </li>
+
           <li>
             <video controls preload="metadata">
               <source src="assets/vd/Series/Serie%204.mp4" type="video/mp4" />
             </video>
           </li>
+
           <li>
             <video controls preload="metadata">
               <source src="assets/vd/Series/Serie%205.mp4" type="video/mp4" />
             </video>
           </li>
+
           <li>
             <video controls preload="metadata">
               <source src="assets/vd/Series/Serie%206.mp4" type="video/mp4" />
@@ -170,6 +180,7 @@
               <img alt="GitHub" src="assets/img/github.png" />
             </a>
           </li>
+
           <li>
             <a
               href="https://www.instagram.com/david.dama_?igsh=MWRtcjhib3liaHFxNQ=="
@@ -180,6 +191,7 @@
               <img alt="Instagram" src="assets/img/instagram.png" />
             </a>
           </li>
+
           <li>
             <a
               aria-label="X de David"
@@ -190,6 +202,7 @@
               <img alt="X / Twitter" src="assets/img/x.jpg" />
             </a>
           </li>
+
           <li>
             <a
               href="https://www.tiktok.com/@david.dama_?_r=1&_t=ZN-93OJ8iuFHWB"

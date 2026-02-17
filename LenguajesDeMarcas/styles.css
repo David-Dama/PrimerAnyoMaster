@@ -17,6 +17,18 @@
       format("truetype");
 }
 
+/*Animaciones*/
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /*Variables*/
 :root {
   /*Fuentes*/
@@ -34,6 +46,8 @@
   --red-border: solid red 2px;
 }
 
+/*CSS aplicado al HTML*/
+
 * {
   margin: 0;
   padding: 0;
@@ -42,37 +56,55 @@
   color: white;
 }
 
-/* HEADER */
-header {
-  position: relative; /* referencia para nav absoluto */
-  height: 60px;
-  background: var(--color-header);
-  display: flex;
-  padding: 20px;
-  border-bottom: #8a8a8a 1px solid;
-}
-
 /*Hacemos invisibles los inputs para que no aparezcan en
 la pagina pero si funcionen*/
 body input[type="radio"] {
   display: none;
 }
 
-/* TÍTULO */
-#tituloHeader {
-  color: white;
-  font-size: 35px;
-  font-family: var(--fuente-headers), serif;
+/*Ocultamos todas las secciones para que el falso SPA funcione*/
+main section {
+  display: none;
+  padding: 40px;
+  min-height: calc(100vh - 120px);
 }
 
+/*Para hacer un falso SPA, dependiendo de que input esté checkeado,
+mostramos una seccion u otra*/
+#paginaInicio:checked ~ main #seccionInicio,
+#sobreMi:checked ~ main #seccionSobreMi,
+#proyectos:checked ~ main #seccionProyectos,
+#contacto:checked ~ main #seccionContacto,
+#boxeo:checked ~ main #seccionBoxeo {
+  display: block;
+  animation: aparecer 0.4s ease-in-out;
+}
+
+/* Sección activa destacada */
+#paginaInicio:checked ~ header label[for="paginaInicio"],
+#sobreMi:checked ~ header label[for="sobreMi"],
+#proyectos:checked ~ header label[for="proyectos"],
+#contacto:checked ~ header label[for="contacto"],
+#boxeo:checked ~ header label[for="boxeo"] {
+  color: var(--color-hover);
+}
+
+
+/* HEADER */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 30px;
   height: 60px;
   background: var(--color-header);
   border-bottom: #8a8a8a 1px solid;
+}
+
+#tituloHeader {
+  color: white;
+  font-size: 35px;
+  font-family: var(--fuente-headers), serif;
 }
 
 .navHeader ul {
@@ -80,12 +112,12 @@ header {
   display: flex;
   list-style: none;
   padding: 0;
-  gap: 30px;
+  gap: 35px;
 }
 
 .navHeader ul li {
   margin: 0;
-  font-size: 15px;
+  font-size: 20px;
   text-align: center;
   color: white;
   transition: transform 0.3s;
@@ -93,28 +125,26 @@ header {
 
 .navHeader ul li:hover {
   margin: 0;
-  transform: scale(1.7);
+  transform: scale(1.5);
   text-align: center;
 }
 
 .navHeader ul li label:hover {
   color: var(--color-hover);
 }
-/*Body*/
+
+/* BODY */
+
+/*Seccion inicio todo*/
+#seccionInicio {
+  background-image: url("assets/img/fondo.jpg");
+  background-size: 70%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 body {
   background-color: var(--color-body);
-}
-
-h2 {
-  font-family: var(--fuente-headers), serif;
-}
-
-h3 {
-  font-family: var(--fuente-headers), serif;
-}
-
-p {
-  font-family: var(--fuente-principal), serif;
 }
 
 /*footer*/
