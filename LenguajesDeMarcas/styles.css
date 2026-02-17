@@ -54,7 +54,7 @@ header {
 
 /*Hacemos invisibles los inputs para que no aparezcan en
 la pagina pero si funcionen*/
-body input {
+body input[type="radio"] {
   display: none;
 }
 
@@ -80,7 +80,7 @@ header {
   display: flex;
   list-style: none;
   padding: 0;
-  gap: 15px;
+  gap: 30px;
 }
 
 .navHeader ul li {
@@ -93,7 +93,7 @@ header {
 
 .navHeader ul li:hover {
   margin: 0;
-  transform: scale(1.1);
+  transform: scale(1.7);
   text-align: center;
 }
 
