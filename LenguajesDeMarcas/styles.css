@@ -151,7 +151,7 @@ body {
 
 .titulo {
   font-family: var(--fuente-headers), serif;
-  font-size: 70px;
+  font-size: 100px;
   margin: 0; /* Quita márgenes por defecto que puedan descentrar */
 }
 
