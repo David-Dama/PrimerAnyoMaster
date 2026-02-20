@@ -20,6 +20,7 @@
     <meta name="twitter:image" content="" />
     <!--Meter imagen-->
   </head>
+
   <body>
     <!--Creamos varios inputs de type radio para poder blockear las secciones que no queremos que se vean
 y de sensación de que son varias páginas distintas.
@@ -38,7 +39,7 @@ seleccionado.-->
 
     <!--En el header pondremos un nav con una lista con las diferentes secciones de la página-->
     <header>
-      <h2 id="tituloHeader">David López Zurrón</h2>
+      <h2 class="tituloHeader">David López Zurrón</h2>
 
       <nav class="navHeader">
         <ul>
@@ -55,11 +56,12 @@ seleccionado.-->
       <section id="seccionInicio">
         <!-- video de fondo-->
         <video autoplay muted loop playsinline class="videoFondo">
-          <source src="./assets/vd/fondo.mp4" type="video/mp4">
+          <source src="./assets/vd/FondoPaginaWeb.mp4" type="video/mp4" />
         </video>
-
-        <h1>Bienvenido al portfolio de David</h1>
-        <p id="subtitulo">Futuro desarrollador fullstack</p>
+        <h1 class="titulo">Bienvenido al portfolio de David</h1>
+        <p class="subtitulo">
+          Toquemos madera para acabar como desarrollador fullstack
+        </p>
       </section>
 
       <section id="seccionSobreMi">
@@ -173,7 +175,7 @@ seleccionado.-->
     </main>
 
     <footer>
-      <nav id="redes">
+      <nav class="redes">
         <ul>
           <li>
             <a
@@ -221,7 +223,7 @@ seleccionado.-->
         </ul>
       </nav>
 
-      <div id="copyright">
+      <div class="copyright">
         <p>© Portfolio de David López Zurrón</p>
       </div>
     </footer>
