@@ -1,4 +1,7 @@
-/*Imports de fuentes*/
+/* =========================
+   1️⃣ IMPORTS DE FUENTES
+========================= */
+
 @font-face {
   font-family: LeagueSpartan;
   src:
@@ -17,19 +20,10 @@
       format("truetype");
 }
 
-/*Animaciones*/
-@keyframes aparecer {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+/* =========================
+   2️⃣ VARIABLES
+========================= */
 
-/*Variables*/
 :root {
   /*Fuentes*/
   --fuente-principal: TiltNeon;
@@ -37,16 +31,17 @@
 
   /*Color*/
   --color-texto: #e8e8e8;
-  --color-header: #0f172a;
+  --color-headerYfooter: #070719;
   --color-body: #1e293b;
-  --color-footer: #0f172a;
   --color-hover: #8b5cf6;
 
   /*Extra*/
   --red-border: solid red 2px;
 }
 
-/*CSS aplicado al HTML*/
+/* =========================
+   3️⃣ RESET / BASE
+========================= */
 
 * {
   margin: 0;
@@ -56,17 +51,52 @@
   color: white;
 }
 
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: var(--color-body);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* =========================
+   4️⃣ LAYOUT GLOBAL
+========================= */
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+main section {
+  display: none;
+  padding: 40px;
+  min-height: 100%;
+}
+
+.videoFondo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  z-index: -1;
+}
+
+/* =========================
+   5️⃣ SPA (LOGICA CON RADIOS)
+========================= */
+
 /*Hacemos invisibles los inputs para que no aparezcan en
 la pagina pero si funcionen*/
 body input[type="radio"] {
   display: none;
-}
-
-/*Ocultamos todas las secciones para que el falso SPA funcione*/
-main section {
-  display: none;
-  padding: 40px;
-  min-height: calc(100vh - 120px);
 }
 
 /*Para hacer un falso SPA, dependiendo de que input esté checkeado,
@@ -88,14 +118,17 @@ mostramos una seccion u otra*/
   color: var(--color-hover);
 }
 
-/* HEADER */
+/* =========================
+   6️⃣ HEADER
+========================= */
+
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 30px;
-  height: 60px;
-  background: var(--color-header);
+  min-height: 60px;
+  background: var(--color-headerYfooter);
   border-bottom: #8a8a8a 1px solid;
 }
 
@@ -103,17 +136,19 @@ header {
   color: white;
   font-size: 35px;
   font-family: var(--fuente-headers), serif;
+  z-index: 1;
 }
 
-.navHeader ul {
+.seleccionarSeccion {
   font-family: var(--fuente-principal), serif;
   display: flex;
   list-style: none;
   padding: 0;
   gap: 35px;
+  z-index: 1;
 }
 
-.navHeader ul li {
+.opcionSeccion {
   margin: 0;
   font-size: 20px;
   text-align: center;
@@ -121,25 +156,20 @@ header {
   transition: transform 0.3s;
 }
 
-.navHeader ul li:hover {
+.opcionSeccion:hover {
   margin: 0;
   transform: scale(1.5);
   text-align: center;
 }
 
-.navHeader ul li label:hover {
+.opcionSeccion label:hover {
   color: var(--color-hover);
 }
 
-/* BODY */
+/* =========================
+   7️⃣ SECCIÓN INICIO
+========================= */
 
-body {
-  background-color: var(--color-body);
-}
-
-/*Seccion inicio todo*/
-
-/* Modificación en la sección para que sea el marco de referencia */
 #seccionInicio {
   flex-direction: column;
   align-items: center;
@@ -147,12 +177,13 @@ body {
   position: relative;
   padding: 0;
   overflow: hidden;
+  min-height: calc(100vh - 120px);
 }
 
 .titulo {
   font-family: var(--fuente-headers), serif;
   font-size: 100px;
-  margin: 0; /* Quita márgenes por defecto que puedan descentrar */
+  margin: 0;
 }
 
 .subtitulo {
@@ -162,24 +193,59 @@ body {
   color: var(--color-hover);
 }
 
-.videoFondo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
+/* =========================
+   8️⃣ SECCIÓN SOBRE MÍ
+========================= */
+
+#seccionSobreMi {
+  position: relative;
+  min-height: calc(100vh - 120px);
+  overflow: hidden;
+  gap: 30px;
+  padding: 100px 130px 100px 130px;
 }
 
-/*footer*/
+.preguntasSobreMi {
+  background-color: #120867;
+  border: 1px solid white; /* corregido */
+  border-radius: 15px;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  position: relative;
+  width: 100%;
+  min-height: calc(65vh - 120px);
+  padding: 10px;
+  overflow: hidden;
+}
+
+.preguntasSobreMi h3 {
+  font-family: var(--fuente-headers), serif;
+  font-size: 23px;
+  font-weight: bold;
+}
+
+.preguntasSobreMi p{
+  font-family: var(--fuente-principal), serif;
+  font-size: 16px;
+  text-align: justify;
+  line-height: 1.6;
+}
+
+/* =========================
+   9️⃣ FOOTER
+========================= */
+
 footer {
   display: flex;
-  justify-content: space-between; /* Separación máxima entre elementos */
-  align-items: center; /* Centrado vertical */
+  height: 60px;
+  justify-content: space-between;
+  align-items: center;
   padding: 10px 20px;
-  background-color: var(--color-footer);
-  border-top: #8a8a8a 1px solid; /* Color de fondo opcional */
+  background-color: var(--color-headerYfooter);
+  border-top: #8a8a8a 1px solid;
 }
 
 .redes ul {
@@ -192,15 +258,15 @@ footer {
   margin: 0;
 }
 
-.redes li img {
+.imagenesRedes {
   width: 32px;
   height: 32px;
   transition: transform 0.3s;
   border-radius: 30%;
 }
 
-.redes li img:hover {
-  transform: scale(1.2); /* Efecto al pasar el mouse */
+.imagenesRedes:hover {
+  transform: scale(1.2);
 }
 
 .copyright {

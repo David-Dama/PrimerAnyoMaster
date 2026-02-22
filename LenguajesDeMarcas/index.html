@@ -17,8 +17,6 @@
       name="twitter:description"
       content="Este portfolio habla sobre un estudiantes de DAW, hablando sobre sus gustos y hobbys"
     />
-    <meta name="twitter:image" content="" />
-    <!--Meter imagen-->
   </head>
 
   <body>
@@ -30,9 +28,9 @@ pedida (main en este caso), y la etiqueta tiene que estar a la misma altura que 
 
 Ponemos el mismo nombre en todos los inputs, ya que en type radio no permite tener dos elementos del mismo nombre
 seleccionado.-->
-    <input type="radio" name="elegirSeccion" id="paginaInicio" checked />
+    <input type="radio" name="elegirSeccion" id="paginaInicio" />
     <!-- Usamos checked para que sea el escogido por defecto-->
-    <input type="radio" name="elegirSeccion" id="sobreMi" />
+    <input type="radio" name="elegirSeccion" id="sobreMi" checked />
     <input type="radio" name="elegirSeccion" id="proyectos" />
     <input type="radio" name="elegirSeccion" id="contacto" />
     <input type="radio" name="elegirSeccion" id="boxeo" />
@@ -42,12 +40,16 @@ seleccionado.-->
       <h2 class="tituloHeader">David López Zurrón</h2>
 
       <nav class="navHeader">
-        <ul>
-          <li><label for="paginaInicio">Inicio</label></li>
-          <li><label for="sobreMi">Sobre Mí</label></li>
-          <li><label for="proyectos">Proyectos</label></li>
-          <li><label for="contacto">Contacto</label></li>
-          <li><label for="boxeo">Boxeo</label></li>
+        <ul class="seleccionarSeccion">
+          <li class="opcionSeccion">
+            <label for="paginaInicio">Inicio</label>
+          </li>
+          <li class="opcionSeccion"><label for="sobreMi">Sobre Mí</label></li>
+          <li class="opcionSeccion">
+            <label for="proyectos">Proyectos</label>
+          </li>
+          <li class="opcionSeccion"><label for="contacto">Contacto</label></li>
+          <li class="opcionSeccion"><label for="boxeo">Boxeo</label></li>
         </ul>
       </nav>
     </header>
@@ -56,7 +58,7 @@ seleccionado.-->
       <section id="seccionInicio">
         <!-- video de fondo-->
         <video autoplay muted loop playsinline class="videoFondo">
-          <source src="./assets/vd/fondo.mp4" type="video/mp4" />
+          <source src="./assets/vd/fondoInicio.mp4" type="video/mp4" />
         </video>
         <h1 class="titulo">Bienvenido al portfolio de David</h1>
         <p class="subtitulo">
@@ -65,43 +67,53 @@ seleccionado.-->
       </section>
 
       <section id="seccionSobreMi">
-        <h2>Sobre mí</h2>
-        <h3>¿Quién soy?</h3>
-        <p>
-          Soy David López Zurrón, actual estudiante de una FP de DAW en
-          Prometeo.
-        </p>
-        <h3>¿Cuándo empezó mi pasión por la programación?</h3>
-        <p>
-          Aproximadamente a los 11-12 años. Recuerdo hacer un trabajo en Scratch
-          y uno en HTML (muy básico), y quedarme fascinado por todas las cosas y
-          posibilidades que tenía para hacer. Esa capacidad de tener rienda
-          suelta para mi imaginación era lo que más había despertado interés en
-          mí, y los retos que suponían solucionar problemas era un
-          entretenimiento más del que disfrutaba.
-        </p>
-        <h3>¿Qué <span lang="en">hobbies</span> tengo?</h3>
-        <p>
-          Una de mis mayores aficiones es el boxeo. Llevo practicándolo desde
-          2021, y sin duda ha sido una de las mejores decisiones que he tomado
-          nunca. Es un deporte que me aporta tranquilidad, seguridad, un buen
-          estado físico y una ayuda para desconectar de todo y recargar energía
-          (mentalmente claro). La última sección estará dedicada a algunos de
-          los videos míos boxeando, ¡te dejo <a href="#seccionBoxeo">aquí</a> el
-          link para que vayas ya a verlo! (en mi Instagram también puedes
-          encontrarlos😉)
-        </p>
-        <p>
-          Y, al igual que muchas personas, disfruto mucho de los videojuegos,
-          sin importar el género: MMO, Metroidvanias, mundos abiertos (Open
-          World) o modos de juego como JcJ y TvT. Algunos de mis videojuegos
-          favoritos son Hollow Knight y Hollow Knight: Silksong, Fortnite,
-          League of Legends (LoL), Valorant, Dying Light y Genshin Impact.
-        </p>
+        <!-- video de fondo-->
+        <video autoplay muted loop playsinline class="videoFondo">
+          <source src="./assets/vd/fondoSobreMi.mp4" type="video/mp4" />
+        </video>
+
+        <div class="preguntasSobreMi">
+          <h3>¿Quién soy?</h3>
+          <p>
+            Soy David López Zurrón, actual estudiante de una FP de DAW en
+            Prometeo.
+          </p>
+        </div>
+
+        <div class="preguntasSobreMi">
+          <h3>¿Cuándo empezó mi pasión por la programación?</h3>
+          <p>
+            Aproximadamente a los 11-12 años. Recuerdo hacer un trabajo en
+            Scratch y uno en HTML (muy básico), y quedarme fascinado por todas
+            las cosas y posibilidades que tenía para hacer. Esa capacidad de
+            tener rienda suelta para mi imaginación era lo que más había
+            despertado interés en mí, y los retos que suponían solucionar
+            problemas era un entretenimiento más del que disfrutaba.
+          </p>
+        </div>
+
+        <div class="preguntasSobreMi">
+          <h3>¿Qué <span lang="en">hobbies</span> tengo?</h3>
+          <p>
+            Una de mis mayores aficiones es el boxeo. Llevo practicándolo desde
+            2021, y sin duda ha sido una de las mejores decisiones que he tomado
+            nunca. Es un deporte que me aporta tranquilidad, seguridad, un buen
+            estado físico y una ayuda para desconectar de todo y recargar
+            energía (mentalmente claro). La última sección estará dedicada a
+            algunos de los videos míos boxeando, ¡te recomiendo que vayas a
+            verlo! (en mi Instagram también puedes encontrarlos😉)
+          </p>
+          <p>
+            Y, al igual que muchas personas, disfruto mucho de los videojuegos,
+            sin importar el género: MMO, Metroidvanias, mundos abiertos (Open
+            World) o modos de juego como JcJ y TvT. Algunos de mis videojuegos
+            favoritos son Hollow Knight y Hollow Knight: Silksong, Fortnite,
+            League of Legends (LoL), Valorant, Dying Light y Genshin Impact.
+          </p>
+        </div>
       </section>
 
       <section id="seccionProyectos">
-        <h2>Proyectos</h2>
         <p>
           Como ya he dicho antes, soy un estudiante de DAW con poca experiencia
           y proyectos relevantes que enseñar, asique cuando vaya teniendo algo
@@ -110,7 +122,6 @@ seleccionado.-->
       </section>
 
       <section id="seccionContacto">
-        <h2>Contacto</h2>
         <p>
           Mi mail:
           <a
@@ -125,12 +136,11 @@ seleccionado.-->
       </section>
 
       <section id="seccionBoxeo">
-        <h2>Boxeo</h2>
         <p>
           Llevo desde 2022 practicando boxeo en un club llamado Club Boxeo
           Kronos, y es sin duda el mejor club en el que he podido acabar. Por si
-          os interesa, os dejo algunos videos de mí mismo haciendo unas series y
-          unos sparrings, ¡espero que os gusten!
+          os interesa, os dejo algunos videos de mí mismo haciendo unas series,
+          ¡espero que os gusten!
         </p>
         <h3>Series</h3>
         <ul>
@@ -184,7 +194,11 @@ seleccionado.-->
               rel="noopener noreferrer"
               aria-label="GitHub de David"
             >
-              <img alt="GitHub" src="assets/img/github.png" />
+              <img
+                alt="GitHub"
+                src="assets/img/github.png"
+                class="imagenesRedes"
+              />
             </a>
           </li>
 
@@ -195,7 +209,11 @@ seleccionado.-->
               rel="noopener noreferrer"
               aria-label="Instagram de David"
             >
-              <img alt="Instagram" src="assets/img/instagram.png" />
+              <img
+                alt="Instagram"
+                src="assets/img/instagram.png"
+                class="imagenesRedes"
+              />
             </a>
           </li>
 
@@ -206,7 +224,11 @@ seleccionado.-->
               rel="noopener noreferrer"
               target="_blank"
             >
-              <img alt="X / Twitter" src="assets/img/x.jpg" />
+              <img
+                alt="X / Twitter"
+                src="assets/img/x.jpg"
+                class="imagenesRedes"
+              />
             </a>
           </li>
 
@@ -217,7 +239,11 @@ seleccionado.-->
               rel="noopener noreferrer"
               aria-label="TikTok de David"
             >
-              <img alt="TikTok" src="assets/img/tik-tok.png" />
+              <img
+                alt="TikTok"
+                src="assets/img/tik-tok.png"
+                class="imagenesRedes"
+              />
             </a>
           </li>
         </ul>
