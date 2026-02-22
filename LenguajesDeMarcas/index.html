@@ -2,7 +2,8 @@
 <html lang="es-ES">
   <head>
     <meta charset="UTF-8" />
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio DavidLZ</title>
     <link rel="stylesheet" href="styles.css" />
     <meta property="og:title" content="Portfolio de David" />
     <meta
@@ -17,6 +18,7 @@
       name="twitter:description"
       content="Este portfolio habla sobre un estudiantes de DAW, hablando sobre sus gustos y hobbys"
     />
+    <script src="script.js" defer></script>
   </head>
 
   <body>
@@ -28,11 +30,10 @@ pedida (main en este caso), y la etiqueta tiene que estar a la misma altura que 
 
 Ponemos el mismo nombre en todos los inputs, ya que en type radio no permite tener dos elementos del mismo nombre
 seleccionado.-->
-    <input type="radio" name="elegirSeccion" id="paginaInicio" />
+    <input type="radio" name="elegirSeccion" id="paginaInicio" checked />
     <!-- Usamos checked para que sea el escogido por defecto-->
-    <input type="radio" name="elegirSeccion" id="sobreMi" checked />
+    <input type="radio" name="elegirSeccion" id="sobreMi" />
     <input type="radio" name="elegirSeccion" id="proyectos" />
-    <input type="radio" name="elegirSeccion" id="contacto" />
     <input type="radio" name="elegirSeccion" id="boxeo" />
 
     <!--En el header pondremos un nav con una lista con las diferentes secciones de la página-->
@@ -44,12 +45,15 @@ seleccionado.-->
           <li class="opcionSeccion">
             <label for="paginaInicio">Inicio</label>
           </li>
-          <li class="opcionSeccion"><label for="sobreMi">Sobre Mí</label></li>
+          <li class="opcionSeccion">
+            <label for="sobreMi">Sobre Mí</label>
+          </li>
           <li class="opcionSeccion">
             <label for="proyectos">Proyectos</label>
           </li>
-          <li class="opcionSeccion"><label for="contacto">Contacto</label></li>
-          <li class="opcionSeccion"><label for="boxeo">Boxeo</label></li>
+          <li class="opcionSeccion">
+            <label for="boxeo">Boxeo</label>
+          </li>
         </ul>
       </nav>
     </header>
@@ -62,7 +66,7 @@ seleccionado.-->
         </video>
         <h1 class="titulo">Bienvenido al portfolio de David</h1>
         <p class="subtitulo">
-          Toquemos madera para acabar como desarrollador fullstack
+          Desarrollador fullstack
         </p>
       </section>
 
@@ -76,107 +80,140 @@ seleccionado.-->
           <h3>¿Quién soy?</h3>
           <p>
             Soy David López Zurrón, actual estudiante de una FP de DAW en
-            Prometeo.
+            Prometeo. Nací en Madrid el 9 de abril de 2007. Tengo familia en
+            muchos lugares de España, desde Galicia hasta Sevilla.
+          </p>
+
+          <p>
+            Tengo un pueblo llamado Pedralba de la Pradería, donde nació mi
+            abuela materna y al que suelo ir a veranear todos los años.
+          </p>
+
+          <p>
+            Antes de estudiar en Prometeo, estudié en el colegio-instituto
+            Nuestra Señora de las Nieves, en Canillejas, el barrio en el que me
+            crié y crecí hasta mudarme a mi casa actual, en El Cañaveral. Es una
+            zona bastante nueva, con poca gente y poco comercio, pero también
+            muy tranquila, algo que personalmente valoro mucho.
           </p>
         </div>
 
         <div class="preguntasSobreMi">
           <h3>¿Cuándo empezó mi pasión por la programación?</h3>
           <p>
-            Aproximadamente a los 11-12 años. Recuerdo hacer un trabajo en
-            Scratch y uno en HTML (muy básico), y quedarme fascinado por todas
-            las cosas y posibilidades que tenía para hacer. Esa capacidad de
-            tener rienda suelta para mi imaginación era lo que más había
-            despertado interés en mí, y los retos que suponían solucionar
-            problemas era un entretenimiento más del que disfrutaba.
+            Aproximadamente a los 11 o 12 años. Recuerdo hacer un trabajo en
+            Scratch y otro en HTML (muy básico) y quedarme fascinado por todas
+            las posibilidades que ofrecían. Esa capacidad de dar rienda suelta a
+            mi imaginación fue lo que más despertó mi interés, y los retos que
+            suponía resolver problemas se convirtieron en un entretenimiento más
+            del que disfrutaba.
+          </p>
+
+          <p>
+            Además, siempre me han interesado mucho las ciencias y, como la
+            programación es bastante lógica, tuve claro desde ese momento que
+            quería dedicarme a ello. Sin duda, he tomado la decisión correcta,
+            porque me encanta fallar, aprender, mejorar y repetir ese ciclo una
+            y otra vez.
           </p>
         </div>
 
         <div class="preguntasSobreMi">
           <h3>¿Qué <span lang="en">hobbies</span> tengo?</h3>
           <p>
-            Una de mis mayores aficiones es el boxeo. Llevo practicándolo desde
-            2021, y sin duda ha sido una de las mejores decisiones que he tomado
-            nunca. Es un deporte que me aporta tranquilidad, seguridad, un buen
-            estado físico y una ayuda para desconectar de todo y recargar
-            energía (mentalmente claro). La última sección estará dedicada a
-            algunos de los videos míos boxeando, ¡te recomiendo que vayas a
-            verlo! (en mi Instagram también puedes encontrarlos😉)
+            Una de mis mayores aficiones es el boxeo. Lo practico desde 2021 y,
+            sin duda, ha sido una de las mejores decisiones que he tomado. Es un
+            deporte que me aporta tranquilidad, seguridad, un buen estado físico
+            y una forma de desconectar y recargar energía (mentalmente, claro).
+          </p>
+          <p>
+            La última sección estará dedicada a algunos vídeos míos entrenando y
+            boxeando; te recomiendo que les eches un vistazo. En mi Instagram
+            también puedes encontrarlos 😉
           </p>
           <p>
             Y, al igual que muchas personas, disfruto mucho de los videojuegos,
-            sin importar el género: MMO, Metroidvanias, mundos abiertos (Open
-            World) o modos de juego como JcJ y TvT. Algunos de mis videojuegos
-            favoritos son Hollow Knight y Hollow Knight: Silksong, Fortnite,
-            League of Legends (LoL), Valorant, Dying Light y Genshin Impact.
+            sin importar el género: MMO, metroidvanias, mundos abiertos (open
+            world) o modos de juego como JcJ y TvT. Algunos de mis favoritos son
+            Hollow Knight, Hollow Knight: Silksong, Fortnite, League of Legends
+            (LoL), Valorant, Dying Light y Genshin Impact.
           </p>
         </div>
       </section>
 
       <section id="seccionProyectos">
-        <p>
-          Como ya he dicho antes, soy un estudiante de DAW con poca experiencia
-          y proyectos relevantes que enseñar, asique cuando vaya teniendo algo
-          relevante que enseñar, ¡aparecerá por aquí!
-        </p>
-      </section>
+        <h2>¡Pulsa uno de los proyectos para descargar el .zip del código!</h2>
+        <button class="prev">‹</button>
+        <div class="carousel">
+          <article class="slide">
+            <a href="./assets/docs/" download="">
+              <img src="./assets/img/instagram.png" alt="Proyecto 1" />
+            </a>
+          </article>
 
-      <section id="seccionContacto">
-        <p>
-          Mi mail:
-          <a
-            href="mailto:davidlopezzurron@gmail.com?subject=Contacto%20Portfolio&body=Escríbeme%20sobre%20lo%20que%20quieras%20aquí."
-            >davidlopezzurron@gmail.com</a
-          >
-        </p>
-        <p>
-          ¡Mis redes sociales están abajo si prefieres contactar conmigo por
-          allí!
-        </p>
+          <article class="slide">
+            <a href="./assets/docs/" download="">
+              <img src="./assets/img/tik-tok.png" alt="Proyecto 2" />
+            </a>
+          </article>
+
+          <article class="slide">
+            <a href="./assets/docs/" download="">
+              <img src="./assets/img/x.jpg" alt="Proyecto 3" />
+            </a>
+          </article>
+          <article class="slide">
+            <a href="./assets/docs/" download="">
+              <img src="./assets/img/github.png" alt="Proyecto 3" />
+            </a>
+          </article>
+        </div>
+        <button class="next">›</button>
       </section>
 
       <section id="seccionBoxeo">
         <p>
           Llevo desde 2022 practicando boxeo en un club llamado Club Boxeo
-          Kronos, y es sin duda el mejor club en el que he podido acabar. Por si
-          os interesa, os dejo algunos videos de mí mismo haciendo unas series,
-          ¡espero que os gusten!
+          Kronos, y es sin duda el mejor club en el que he podido acabar.
         </p>
-        <h3>Series</h3>
-        <ul>
+        <p>
+          Por si os interesa, os dejo algunos videos de mí mismo haciendo unas
+          series, ¡espero que os gusten!
+        </p>
+        <ul class="listaVideos">
           <li>
-            <video controls preload="metadata">
+            <video controls preload="metadata" class="videosBoxeo">
               <source src="assets/vd/Series/Serie%201.mp4" type="video/mp4" />
               Tu navegador no soporta el vídeo.
             </video>
           </li>
 
           <li>
-            <video controls preload="metadata">
+            <video controls preload="metadata" class="videosBoxeo">
               <source src="assets/vd/Series/Serie%202.mp4" type="video/mp4" />
             </video>
           </li>
 
           <li>
-            <video controls preload="metadata">
+            <video controls preload="metadata" class="videosBoxeo">
               <source src="assets/vd/Series/Serie%203.mp4" type="video/mp4" />
             </video>
           </li>
 
           <li>
-            <video controls preload="metadata">
+            <video controls preload="metadata" class="videosBoxeo">
               <source src="assets/vd/Series/Serie%204.mp4" type="video/mp4" />
             </video>
           </li>
 
           <li>
-            <video controls preload="metadata">
+            <video controls preload="metadata" class="videosBoxeo">
               <source src="assets/vd/Series/Serie%205.mp4" type="video/mp4" />
             </video>
           </li>
 
           <li>
-            <video controls preload="metadata">
+            <video controls preload="metadata" class="videosBoxeo">
               <source src="assets/vd/Series/Serie%206.mp4" type="video/mp4" />
             </video>
           </li>
@@ -248,6 +285,17 @@ seleccionado.-->
           </li>
         </ul>
       </nav>
+
+      <div class="contacto">
+        <p>
+          Puedes escribirme directamente a
+          <a
+            href="mailto:davidlopezzurron@gmail.com?subject=Contacto%20Portfolio"
+          >
+            davidlopezzurron@gmail.com
+          </a>
+        </p>
+      </div>
 
       <div class="copyright">
         <p>© Portfolio de David López Zurrón</p>

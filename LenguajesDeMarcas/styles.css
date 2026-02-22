@@ -1,5 +1,5 @@
 /* =========================
-   1️⃣ IMPORTS DE FUENTES
+  IMPORTS DE FUENTES
 ========================= */
 
 @font-face {
@@ -21,7 +21,7 @@
 }
 
 /* =========================
-   2️⃣ VARIABLES
+   VARIABLES
 ========================= */
 
 :root {
@@ -40,7 +40,7 @@
 }
 
 /* =========================
-   3️⃣ RESET / BASE
+  RESET / BASE
 ========================= */
 
 * {
@@ -64,7 +64,7 @@ body {
 }
 
 /* =========================
-   4️⃣ LAYOUT GLOBAL
+  LAYOUT GLOBAL
 ========================= */
 
 main {
@@ -90,7 +90,7 @@ main section {
 }
 
 /* =========================
-   5️⃣ SPA (LOGICA CON RADIOS)
+  SPA (LOGICA CON RADIOS)
 ========================= */
 
 /*Hacemos invisibles los inputs para que no aparezcan en
@@ -104,7 +104,6 @@ mostramos una seccion u otra*/
 #paginaInicio:checked ~ main #seccionInicio,
 #sobreMi:checked ~ main #seccionSobreMi,
 #proyectos:checked ~ main #seccionProyectos,
-#contacto:checked ~ main #seccionContacto,
 #boxeo:checked ~ main #seccionBoxeo {
   display: flex;
 }
@@ -119,7 +118,7 @@ mostramos una seccion u otra*/
 }
 
 /* =========================
-   6️⃣ HEADER
+  HEADER
 ========================= */
 
 header {
@@ -162,12 +161,16 @@ header {
   text-align: center;
 }
 
+.opcionSeccion label {
+  cursor: pointer;
+}
+
 .opcionSeccion label:hover {
   color: var(--color-hover);
 }
 
 /* =========================
-   7️⃣ SECCIÓN INICIO
+  SECCIÓN INICIO
 ========================= */
 
 #seccionInicio {
@@ -184,6 +187,7 @@ header {
   font-family: var(--fuente-headers), serif;
   font-size: 100px;
   margin: 0;
+  text-align: center;
 }
 
 .subtitulo {
@@ -191,10 +195,11 @@ header {
   font-size: 24px;
   margin-top: 10px;
   color: var(--color-hover);
+  text-align: center;
 }
 
 /* =========================
-   8️⃣ SECCIÓN SOBRE MÍ
+  SECCIÓN SOBRE MÍ
 ========================= */
 
 #seccionSobreMi {
@@ -207,8 +212,8 @@ header {
 
 .preguntasSobreMi {
   background-color: #120867;
-  border: 1px solid white; /* corregido */
-  border-radius: 15px;
+  border: 1px solid white;
+  border-radius: 35px;
   gap: 20px;
   display: flex;
   flex-direction: column;
@@ -227,7 +232,7 @@ header {
   font-weight: bold;
 }
 
-.preguntasSobreMi p{
+.preguntasSobreMi p {
   font-family: var(--fuente-principal), serif;
   font-size: 16px;
   text-align: justify;
@@ -235,7 +240,141 @@ header {
 }
 
 /* =========================
-   9️⃣ FOOTER
+  SECCIÓN PROYECTOS
+========================= */
+#seccionProyectos {
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+  min-height: calc(100vh - 120px);
+  padding: 30px;
+}
+
+#seccionProyectos h2 {
+  font-family: var(--fuente-headers), serif;
+  font-size: 50px;
+}
+
+/*Carrousel*/
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 120px;
+  right: 100px;
+  height: 500px;
+  perspective: 1000px;
+}
+
+/* Slides ocultos por defecto */
+.slide {
+  position: absolute;
+  opacity: 0;
+  width: 300px;
+  transition: all 0.6s ease;
+  transform-origin: center center;
+}
+
+/* Slide central */
+.slide.active {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  z-index: 3;
+  pointer-events: auto;
+}
+
+/* Slide lateral visible */
+.slide.left,
+.slide.right {
+  opacity: 0.6;
+  z-index: 2;
+  filter: blur(2px);
+  width: 240px;
+  transition: transform 1s;
+  pointer-events: none;
+}
+
+.slide.left img,
+.side.right img {
+  cursor: not-allowed;
+}
+
+/* Posiciones fijas */
+.slide.left {
+  transform: translateX(-500px) scale(0.4);
+  position: absolute;
+}
+
+.slide.right {
+  transform: translateX(600px) scale(0.4);
+  position: absolute;
+}
+
+#seccionProyectos button {
+  display: block;
+  position: absolute;
+  top: 50%;
+  font-size: 70px;
+  color: white;
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition: transform 0.3s;
+}
+
+#seccionProyectos button:hover {
+  color: var(--color-hover);
+  transform: scale(2);
+}
+
+.prev {
+  left: 30px;
+}
+.next {
+  right: 30px;
+}
+
+/* =========================
+  SECCIÓN BOXEO
+========================= */
+#seccionBoxeo {
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+  min-height: calc(100vh - 120px);
+  padding: 25px;
+  gap: 20px;
+}
+
+#seccionBoxeo p {
+  font-family: var(--fuente-headers), serif;
+  font-size: 20px;
+}
+
+.listaVideos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  list-style: none;
+}
+
+.videosBoxeo {
+  width: 95%;
+  border-radius: 12px;
+  /*aspect-ratio: 16/9;*/
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.videosBoxeo:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+/* =========================
+  FOOTER
 ========================= */
 
 footer {
@@ -246,6 +385,7 @@ footer {
   padding: 10px 20px;
   background-color: var(--color-headerYfooter);
   border-top: #8a8a8a 1px solid;
+  z-index: 1;
 }
 
 .redes ul {
@@ -269,9 +409,107 @@ footer {
   transform: scale(1.2);
 }
 
-.copyright {
+.copyright p {
+  font-size: 17px;
+  font-family: var(--fuente-principal), serif;
+}
+
+.contacto{
   display: flex;
-  text-align: left;
-  font-size: 15px;
-  color: white;
+  align-items: center;
+  justify-content: center;
+}
+
+.contacto p {
+  font-size: 17px;
+  font-family: var(--fuente-principal), serif;
+}
+
+.contacto p a:hover {
+  color: var(--color-hover);
+}
+
+/* =========================
+  RESPONSIVE MÓVIL
+========================= */
+
+@media (max-width: 600px){
+  /*Header*/
+  .header{
+    padding: 0 10px;
+  }
+
+  .tituloHeader{
+    font-size: 20px;
+  }
+
+  .seleccionarSeccion {
+    gap: 15px;
+  }
+
+  .opcionSeccion {
+    font-size: 15px;
+  }
+
+  .opcionSeccion:hover {
+    transform: none;
+  }
+
+  /*Body*/
+
+  /*Seccion inicio*/
+  .titulo {
+    font-size: 35px;
+  }
+  .subtitulo {
+    font-size: 20px;
+  }
+
+  /*Seccion sobre mi*/
+  #seccionSobreMi {
+    gap: 15px;
+    padding: 40px 40px 320px 40px;
+    flex-direction: column;
+  }
+
+  .preguntasSobreMi {
+    gap: 10px;
+    top: 10%;
+  }
+
+  .preguntasSobreMi h3 {
+    font-size: 18px;
+  }
+
+  .preguntasSobreMi p {
+    font-size: 12px;
+  }
+
+  /*Footer*/
+  .redes ul{
+    gap: 10px;
+  }
+
+  .imagenesRedes {
+    width: 22px;
+    height: 22px;
+  }
+
+  .imagenesRedes:hover {
+    transform: none;
+  }
+
+  .copyright p{
+    font-size: 10px;
+  }
+
+  .contacto p{
+    font-size: 10px;
+    position: relative;
+    left: 30px
+  }
+
+  .contacto p a:hover{
+    color: white;
+  }
 }
