@@ -35,6 +35,7 @@ seleccionado.-->
     <input type="radio" name="elegirSeccion" id="sobreMi" />
     <input type="radio" name="elegirSeccion" id="proyectos" />
     <input type="radio" name="elegirSeccion" id="boxeo" />
+    <input type="radio" name="elegirSeccion" id="contacto" />
 
     <!--En el header pondremos un nav con una lista con las diferentes secciones de la página-->
     <header>
@@ -65,9 +66,7 @@ seleccionado.-->
           <source src="./assets/vd/fondoInicio.mp4" type="video/mp4" />
         </video>
         <h1 class="titulo">Bienvenido al portfolio de David</h1>
-        <p class="subtitulo">
-          Desarrollador fullstack
-        </p>
+        <p class="subtitulo">Desarrollador fullstack</p>
       </section>
 
       <section id="seccionSobreMi">
@@ -146,25 +145,42 @@ seleccionado.-->
         <button class="prev">‹</button>
         <div class="carousel">
           <article class="slide">
-            <a href="./assets/docs/" download="">
-              <img src="./assets/img/instagram.png" alt="Proyecto 1" />
+            <p class="nombreEncimaProyecto">Calculadora básica</p>
+            <a
+              href="./assets/docs/AntonioApruebame.txt"
+              download="AntonioApruebame.txt"
+            >
+              <img src="./assets/img/Calculadora.jpg" alt="Proyecto 1" />
             </a>
           </article>
 
           <article class="slide">
-            <a href="./assets/docs/" download="">
-              <img src="./assets/img/tik-tok.png" alt="Proyecto 2" />
+            <p class="nombreEncimaProyecto">Software para cafeteras</p>
+            <a
+              href="./assets/docs/AntonioApruebame.txt"
+              download="AntonioApruebame.txt"
+            >
+              <img src="./assets/img/Cafetera.jpg" alt="Proyecto 2" />
             </a>
           </article>
 
           <article class="slide">
-            <a href="./assets/docs/" download="">
-              <img src="./assets/img/x.jpg" alt="Proyecto 3" />
+            <p class="nombreEncimaProyecto">Aplicacion de recetas</p>
+            <a
+              href="./assets/docs/AntonioApruebame.txt"
+              download="AntonioApruebame.txt"
+            >
+              <img src="./assets/img/Recetas.jpg" alt="Proyecto 3" />
             </a>
           </article>
+
           <article class="slide">
-            <a href="./assets/docs/" download="">
-              <img src="./assets/img/github.png" alt="Proyecto 3" />
+            <p class="nombreEncimaProyecto">Apuntes JAVA</p>
+            <a
+              href="./assets/docs/AntonioApruebame.txt"
+              download="AntonioApruebame.txt"
+            >
+              <img src="./assets/img/java.jpg" alt="Proyecto 3" />
             </a>
           </article>
         </div>
@@ -218,6 +234,38 @@ seleccionado.-->
             </video>
           </li>
         </ul>
+      </section>
+
+      <section id="seccionContacto">
+        <form class="formulario">
+          <label for="nombre">Introduzca su nombre</label>
+          <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            placeholder="Nombre completo"
+            required
+          />
+
+          <label for="email">Introduzca su email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="correo@ejemplo.com"
+            required
+          />
+
+          <label for="mensaje">Introduzca el cuerpo del mensaje</label>
+          <textarea
+            id="mensaje"
+            name="mensaje"
+            placeholder="Escriba su mensaje aquí"
+            required
+          ></textarea>
+
+          <button type="submit">Enviar</button>
+        </form>
       </section>
     </main>
 
@@ -287,14 +335,7 @@ seleccionado.-->
       </nav>
 
       <div class="contacto">
-        <p>
-          Puedes escribirme directamente a
-          <a
-            href="mailto:davidlopezzurron@gmail.com?subject=Contacto%20Portfolio"
-          >
-            davidlopezzurron@gmail.com
-          </a>
-        </p>
+        <label for="contacto">Contacta conmigo</label>
       </div>
 
       <div class="copyright">

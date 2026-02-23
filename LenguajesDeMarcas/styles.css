@@ -34,6 +34,8 @@
   --color-headerYfooter: #070719;
   --color-body: #1e293b;
   --color-hover: #8b5cf6;
+  --color-tarjeta: #120867;
+  --color-tarjeta-contacto: #0b1739;
 
   /*Extra*/
   --red-border: solid red 2px;
@@ -104,7 +106,8 @@ mostramos una seccion u otra*/
 #paginaInicio:checked ~ main #seccionInicio,
 #sobreMi:checked ~ main #seccionSobreMi,
 #proyectos:checked ~ main #seccionProyectos,
-#boxeo:checked ~ main #seccionBoxeo {
+#boxeo:checked ~ main #seccionBoxeo,
+#contacto:checked ~ main #seccionContacto {
   display: flex;
 }
 
@@ -113,7 +116,8 @@ mostramos una seccion u otra*/
 #sobreMi:checked ~ header label[for="sobreMi"],
 #proyectos:checked ~ header label[for="proyectos"],
 #contacto:checked ~ header label[for="contacto"],
-#boxeo:checked ~ header label[for="boxeo"] {
+#boxeo:checked ~ header label[for="boxeo"],
+#contacto:checked ~ footer .contacto label[for="contacto"] {
   color: var(--color-hover);
 }
 
@@ -185,14 +189,14 @@ header {
 
 .titulo {
   font-family: var(--fuente-headers), serif;
-  font-size: 100px;
+  font-size: 10vh;
   margin: 0;
   text-align: center;
 }
 
 .subtitulo {
   font-family: var(--fuente-principal), serif;
-  font-size: 24px;
+  font-size: 5vh;
   margin-top: 10px;
   color: var(--color-hover);
   text-align: center;
@@ -211,10 +215,10 @@ header {
 }
 
 .preguntasSobreMi {
-  background-color: #120867;
+  background-color: var(--color-tarjetas);
   border: 1px solid white;
   border-radius: 35px;
-  gap: 20px;
+  gap: 21px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -222,19 +226,19 @@ header {
   position: relative;
   width: 100%;
   min-height: calc(65vh - 120px);
-  padding: 10px;
+  padding: 20px 15px;
   overflow: hidden;
 }
 
 .preguntasSobreMi h3 {
   font-family: var(--fuente-headers), serif;
-  font-size: 23px;
+  font-size: 20px;
   font-weight: bold;
 }
 
 .preguntasSobreMi p {
   font-family: var(--fuente-principal), serif;
-  font-size: 16px;
+  font-size: 2vh;
   text-align: justify;
   line-height: 1.6;
 }
@@ -249,11 +253,12 @@ header {
   width: 100%;
   min-height: calc(100vh - 120px);
   padding: 30px;
+  overflow: hidden;
 }
 
 #seccionProyectos h2 {
   font-family: var(--fuente-headers), serif;
-  font-size: 50px;
+  font-size: 5vh;
 }
 
 /*Carrousel*/
@@ -262,17 +267,21 @@ header {
   justify-content: center;
   align-items: center;
   position: relative;
-  top: 120px;
-  right: 100px;
-  height: 500px;
-  perspective: 1000px;
+  top: 50%;
+  right: 25px;
+}
+
+.nombreEncimaProyecto {
+  font-family: var(--fuente-principal), serif;
+  font-size: 3vh;
+  text-align: center;
+  padding: 10px;
 }
 
 /* Slides ocultos por defecto */
 .slide {
   position: absolute;
   opacity: 0;
-  width: 300px;
   transition: all 0.6s ease;
   transform-origin: center center;
 }
@@ -283,27 +292,33 @@ header {
   transform: translateX(0) scale(1);
   z-index: 3;
   pointer-events: auto;
+  border-radius: 30%;
+}
+
+.slide.active img {
+  width: 60vh;
+  border-radius: 30%;
 }
 
 /* Slide lateral visible */
 .slide.left,
 .slide.right {
   opacity: 0.6;
-  z-index: 2;
   filter: blur(2px);
-  width: 240px;
   transition: transform 1s;
   pointer-events: none;
 }
 
 .slide.left img,
-.side.right img {
+.slide.right img {
   cursor: not-allowed;
+  width: 60vh;
+  border-radius: 30%;
 }
 
 /* Posiciones fijas */
 .slide.left {
-  transform: translateX(-500px) scale(0.4);
+  transform: translateX(-600px) scale(0.4);
   position: absolute;
 }
 
@@ -331,9 +346,11 @@ header {
 
 .prev {
   left: 30px;
+  z-index: 5;
 }
 .next {
   right: 30px;
+  z-index: 5;
 }
 
 /* =========================
@@ -364,7 +381,6 @@ header {
 .videosBoxeo {
   width: 95%;
   border-radius: 12px;
-  /*aspect-ratio: 16/9;*/
   object-fit: cover;
   transition: transform 0.3s;
 }
@@ -373,6 +389,91 @@ header {
   transform: scale(1.05);
   cursor: pointer;
 }
+
+/* =========================
+  SECCIÓN CONTACTO
+========================= */
+
+#seccionContacto {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;  /* elementos apilados verticalmente */
+  align-items: stretch;    /* inputs y botón ocupan todo el ancho */
+  justify-content: flex-start; /* empieza desde arriba */
+  border-radius: 5%;
+  background-color: var(--color-tarjeta-contacto);
+  width: 40%;
+  padding: 3vh;
+  box-shadow: 30px 30px 30px #000000;
+  border: 1px solid #979797;
+}
+
+.formulario label {
+  font-family: var(--fuente-principal), serif;
+  font-size: 20px;
+  text-align: start;
+}
+
+.formulario input {
+  font-family: var(--fuente-principal), serif;
+  font-size: 15px;
+  color: black;
+  margin-bottom: 2.5vh;
+  height: 20px;
+  width: 100%;
+  cursor: text;
+}
+
+.formulario button {
+  background: white;
+  color: var(--color-tarjeta-contacto);
+  cursor: pointer;
+  height: 40px;
+  width: 100%;          /* ocupa todo el ancho */
+  box-sizing: border-box;
+  border-radius: 15px;
+  font-family: var(--fuente-headers), serif;
+  font-size: 20px;
+  font-weight: bold;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  margin-top: 1.5vh;   /* espacio desde el último input */
+}
+
+.formulario textarea {
+
+}
+
+.formulario input:hover,
+.formulario textarea:hover {
+  border-color: #007bff;
+  box-shadow: 0 0 5px #007bff;
+}
+
+.formulario input:focus,
+.formulario textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px #007bff;
+  background-color: #f0f8ff;
+}
+
+.formulario button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  background-color: #007bff;
+  color: white;
+}
+
+.formulario button:focus {
+  background-color: #bdbdbd;
+  outline: none;
+}
+
 /* =========================
   FOOTER
 ========================= */
@@ -396,6 +497,7 @@ footer {
   align-items: center;
   padding: 0;
   margin: 0;
+  z-index: 1;
 }
 
 .imagenesRedes {
@@ -409,37 +511,177 @@ footer {
   transform: scale(1.2);
 }
 
+.copyright {
+  z-index: 1;
+}
+
 .copyright p {
   font-size: 17px;
   font-family: var(--fuente-principal), serif;
 }
 
-.contacto{
+.contacto {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1;
 }
 
-.contacto p {
+.contacto label {
   font-size: 17px;
   font-family: var(--fuente-principal), serif;
+  text-decoration: underline;
+  transition: transform 0.3s;
 }
 
-.contacto p a:hover {
+.contacto label:hover {
   color: var(--color-hover);
+  transform: scale(1.2);
+  cursor: pointer;
 }
 
 /* =========================
-  RESPONSIVE MÓVIL
+  RESPONSIVE MÓVIL NORMAL
 ========================= */
-
-@media (max-width: 600px){
+@media (min-width: 320px) and (max-width: 480px) {
   /*Header*/
-  .header{
-    padding: 0 10px;
+  header {
+    padding: 0 5px;
   }
 
-  .tituloHeader{
+  .seleccionarSeccion {
+    gap: 15px;
+  }
+
+  .tituloHeader {
+    font-size: 15px;
+  }
+
+  .opcionSeccion {
+    font-size: 15px;
+  }
+
+  .opcionSeccion:hover {
+    transform: none;
+  }
+
+  /*Body*/
+
+  /*Seccion inicio*/
+
+  .titulo {
+    font-size: 5vh;
+  }
+
+  .subtitulo {
+    font-size: 3vh;
+  }
+
+  /*Seccion sobre mi*/
+  #seccionSobreMi {
+    gap: 15px;
+    padding: 4.5vh 5vh 38vh 5vh;
+    flex-direction: column;
+  }
+
+  .preguntasSobreMi {
+    gap: 10px;
+    top: 10%;
+  }
+
+  .preguntasSobreMi h3 {
+    font-size: 18px;
+  }
+
+  .preguntasSobreMi p {
+    font-size: 12px;
+  }
+
+  /*Seccion proyectos*/
+  #seccionProyectos h2 {
+    font-size: 3vh;
+    justify-content: center;
+  }
+
+  .carousel {
+    top: 35%;
+    left: 1px;
+  }
+
+  .slide.active img {
+    width: 27vh;
+  }
+
+  .slide.left img,
+  .slide.right img {
+    width: 42vh;
+  }
+
+  .slide.left {
+    transform: translateX(-12vh) translateY(30vh) scale(0.4);
+  }
+
+  .slide.right {
+    transform: translateX(12vh) translateY(30vh) scale(0.4);
+  }
+
+  #seccionProyectos button {
+    top: 35%;
+  }
+
+  #seccionProyectos button:hover {
+    color: white;
+    transform: none;
+  }
+
+  /*Seccion boxeo*/
+  #seccionBoxeo p {
+    font-size: 2.5vh;
+  }
+
+  /*Footer*/
+  footer {
+    padding: 0 10px;
+    min-height: 70px;
+  }
+
+  .redes ul {
+    gap: 5px;
+  }
+
+  .imagenesRedes {
+    width: 20px;
+    height: 20px;
+  }
+
+  .imagenesRedes:hover {
+    transform: none;
+  }
+
+  .copyright p {
+    font-size: 10px;
+  }
+
+  .contacto label {
+    font-size: 10px;
+  }
+
+  .contacto label:hover {
+    transform: none;
+  }
+}
+
+/* =========================
+  RESPONSIVE MÓVIL NORMAL
+========================= */
+
+@media (min-width: 481px) and (max-width: 768px) {
+  /*Header*/
+  header {
+    padding: 0 15px;
+  }
+
+  .tituloHeader {
     font-size: 20px;
   }
 
@@ -459,16 +701,16 @@ footer {
 
   /*Seccion inicio*/
   .titulo {
-    font-size: 35px;
+    font-size: 5vh;
   }
   .subtitulo {
-    font-size: 20px;
+    font-size: 2.5vh;
   }
 
   /*Seccion sobre mi*/
   #seccionSobreMi {
     gap: 15px;
-    padding: 40px 40px 320px 40px;
+    padding: 3vh 5vh 38vh 5vh;
     flex-direction: column;
   }
 
@@ -485,31 +727,177 @@ footer {
     font-size: 12px;
   }
 
+  /*Seccion proyectos*/
+
+  #seccionProyectos h2 {
+    font-size: 2vh;
+    justify-content: center;
+  }
+
+  .carousel {
+    top: 35%;
+    left: 10px;
+  }
+
+  .slide.active img {
+    width: 40vh;
+  }
+
+  .slide.left img,
+  .slide.right img {
+    width: 55vh;
+  }
+
+  .slide.left {
+    transform: translateX(-17vh) translateY(35vh) scale(0.4);
+  }
+
+  .slide.right {
+    transform: translateX(17vh) translateY(35vh) scale(0.4);
+  }
+
+  #seccionProyectos button {
+    top: 35%;
+  }
+
+  #seccionProyectos button:hover {
+    color: white;
+    transform: none;
+  }
+
   /*Footer*/
-  .redes ul{
+
+  footer {
+    padding: 0 15px;
+  }
+
+  .redes ul {
     gap: 10px;
   }
 
   .imagenesRedes {
-    width: 22px;
-    height: 22px;
+    width: 25px;
+    height: 25px;
   }
 
   .imagenesRedes:hover {
     transform: none;
   }
 
-  .copyright p{
-    font-size: 10px;
+  .copyright p {
+    font-size: 11px;
   }
 
-  .contacto p{
-    font-size: 10px;
+  .contacto label {
+    font-size: 11px;
     position: relative;
-    left: 30px
+    left: 3vw;
   }
 
-  .contacto p a:hover{
+  .contacto label:hover {
+    transform: none;
+  }
+}
+
+/* =========================
+  RESPONSIVE TABLET
+========================= */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  /*Body*/
+
+  /*Seccion inicio*/
+  .titulo {
+    font-size: 8vh;
+  }
+
+  .subtitulo {
+    font-size: 6vh;
+  }
+
+  /*Sobre mi*/
+  #seccionSobreMi {
+    padding: 20vh 8vh 20vh 8vh;
+  }
+
+  /*Seccion proyectos*/
+  #seccionProyectos h2 {
+    font-size: 3.5vh;
+  }
+
+  .slide.active {
+    transform: translateX(3vh);
+  }
+
+  .slide.active img {
+    width: 50vh;
+  }
+
+  .slide.left img,
+  .slide.right img {
+    width: 45vh;
+  }
+
+  .slide.left {
+    transform: translateX(-37vh) scale(0.4);
+  }
+
+  .slide.right {
+    transform: translateX(42vh) scale(0.4);
+  }
+
+  #seccionProyectos button:hover {
     color: white;
+    transform: none;
+  }
+
+  /*Footer*/
+  .contacto label {
+    position: relative;
+    left: 2vw;
+  }
+
+  .contacto label:hover {
+    transform: none;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  /*Body*/
+
+  /*Seccion proyecto*/
+  #seccionProyectos h2 {
+    font-size: 3.5vh;
+  }
+
+  .slide.active {
+    transform: translateX(7vh);
+  }
+
+  .slide.active img {
+    width: 50vh;
+  }
+
+  .slide.left img,
+  .slide.right img {
+    width: 45vh;
+  }
+
+  .slide.left {
+    transform: translateX(-37vh) scale(0.4);
+  }
+
+  .slide.right {
+    transform: translateX(50vh) scale(0.4);
+  }
+
+  #seccionProyectos button:hover {
+    color: white;
+    transform: none;
+  }
+
+  /*Footer*/
+  .contacto label:hover {
+    transform: none;
   }
 }
