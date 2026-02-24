@@ -215,7 +215,7 @@ header {
 }
 
 .preguntasSobreMi {
-  background-color: var(--color-tarjetas);
+  background-color: var(--color-tarjeta);
   border: 1px solid white;
   border-radius: 35px;
   gap: 21px;
@@ -230,7 +230,7 @@ header {
   overflow: hidden;
 }
 
-.preguntasSobreMi h3 {
+.preguntasSobreMi h2 {
   font-family: var(--fuente-headers), serif;
   font-size: 20px;
   font-weight: bold;
@@ -371,6 +371,11 @@ header {
   font-size: 20px;
 }
 
+#seccionBoxeo h2 {
+  font-family: var(--fuente-principal), serif;
+  font-size: 3vh;
+}
+
 .listaVideos {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -398,19 +403,39 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
+}
+
+#seccionContacto h2 {
+  font-family: var(--fuente-headers), serif;
+  font-size: 4vh;
+  position: relative;
+  bottom: 5%;
+  justify-content: center;
+  z-index: 1;
+}
+
+#seccionContacto h2 a:hover {
+  color: var(--color-hover);
+}
+
+#seccionContacto h2 a:focus {
+  color: #8a8a8a;
 }
 
 .formulario {
   display: flex;
-  flex-direction: column;  /* elementos apilados verticalmente */
-  align-items: stretch;    /* inputs y botón ocupan todo el ancho */
+  flex-direction: column; /* elementos apilados verticalmente */
+  align-items: stretch; /* inputs y botón ocupan todo el ancho */
   justify-content: flex-start; /* empieza desde arriba */
   border-radius: 5%;
   background-color: var(--color-tarjeta-contacto);
-  width: 40%;
+  width: 45%;
+  height: 90%;
   padding: 3vh;
   box-shadow: 30px 30px 30px #000000;
   border: 1px solid #979797;
+  z-index: 1;
 }
 
 .formulario label {
@@ -427,6 +452,8 @@ header {
   height: 20px;
   width: 100%;
   cursor: text;
+  border-radius: 15px;
+  padding: 10px;
 }
 
 .formulario button {
@@ -434,18 +461,28 @@ header {
   color: var(--color-tarjeta-contacto);
   cursor: pointer;
   height: 40px;
-  width: 100%;          /* ocupa todo el ancho */
+  width: 100%; /* ocupa todo el ancho */
   box-sizing: border-box;
   border-radius: 15px;
   font-family: var(--fuente-headers), serif;
   font-size: 20px;
   font-weight: bold;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-  margin-top: 1.5vh;   /* espacio desde el último input */
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
+  margin-top: 1.5vh; /* espacio desde el último input */
 }
 
 .formulario textarea {
-
+  color: black;
+  resize: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  padding: 10px;
+  font-family: var(--fuente-principal), serif;
+  font-size: 15px;
 }
 
 .formulario input:hover,
@@ -464,7 +501,7 @@ header {
 
 .formulario button:hover {
   transform: scale(1.05);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   background-color: #007bff;
   color: white;
 }
@@ -589,7 +626,7 @@ footer {
     top: 10%;
   }
 
-  .preguntasSobreMi h3 {
+  .preguntasSobreMi h2 {
     font-size: 18px;
   }
 
@@ -637,6 +674,21 @@ footer {
   /*Seccion boxeo*/
   #seccionBoxeo p {
     font-size: 2.5vh;
+  }
+
+  /*Seccion contacto*/
+  #seccionContacto h2 {
+    font-size: 2.5vh;
+    bottom: 7%;
+  }
+
+  #seccionContacto h2 a:hover {
+    color: white;
+  }
+
+  .formulario {
+    width: 100%;
+    height: 80%;
   }
 
   /*Footer*/
@@ -765,6 +817,20 @@ footer {
     transform: none;
   }
 
+  /*Seccion contacto*/
+  #seccionContacto h2 {
+    font-size: 3vh;
+  }
+
+  #seccionContacto h2 a:hover {
+    color: white;
+  }
+
+  .formulario {
+    width: 70%;
+    height: 80%;
+  }
+
   /*Footer*/
 
   footer {
@@ -849,6 +915,20 @@ footer {
   #seccionProyectos button:hover {
     color: white;
     transform: none;
+  }
+
+  /*Seccion contacto*/
+  #seccionContacto h2 {
+    font-size: 4vh;
+  }
+
+  #seccionContacto h2 a:hover {
+    color: white;
+  }
+
+  .formulario {
+    width: 70%;
+    height: 80%;
   }
 
   /*Footer*/
