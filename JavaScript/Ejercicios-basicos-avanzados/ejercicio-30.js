@@ -19,7 +19,7 @@ let clasificadas = {};
 for (let i = 0; i < tracks.length; i++) {
   const genero = tracks[i].genre;
 
-  // Hacemos que, si nos e ha creado ya la clave y el array, se cree
+  // Hacemos que, si no se ha creado ya la clave y el array, se cree
   if (!clasificadas[genero]) {
     clasificadas[genero] = [];
   }
@@ -27,3 +27,5 @@ for (let i = 0; i < tracks.length; i++) {
   // Añadimos la canción
   clasificadas[genero].push(tracks[i].title);
 }
+
+console.log(clasificadas);

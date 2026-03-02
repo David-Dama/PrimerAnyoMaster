@@ -1,7 +1,7 @@
 /*Buscador de nombres: Crea una función que reciba por parámetro un array y el
- valor que desea comprobar que existe dentro de dicho array. Esta función
- comprueba si existe el elemento, y en caso de que exista nos devuelve un true
-  y la posición de dicho elemento y por la contra un false.*/
+valor que desea comprobar que existe dentro de dicho array. Esta función
+comprueba si existe el elemento, y en caso de que exista nos devuelve un true
+y la posición de dicho elemento y por la contra un false.*/
 
 const names = [
   "Peter",
@@ -29,10 +29,32 @@ function nameFinder(nameList, name) {
   }
 
   if (encontrado) {
+    return [true, indexDelNombre];
+  } else {
+    return [false, -1];
+  }
+}
+
+console.log(nameFinder(names, "Tony"));
+
+//Otra opcion
+
+function nameFinder2(nameList, name) {
+  let encontrado = false;
+  let indexDelNombre;
+
+  for (let i = 0; i < nameList.length; i++) {
+    if (nameList[i] === name) {
+      encontrado = true;
+      indexDelNombre = i;
+    }
+  }
+
+  if (encontrado) {
     return `El nombre ha sido encontrado en la posición ${indexDelNombre}!`;
   } else {
     return "El nombre no ha sido encontrado";
   }
 }
 
-console.log(nameFinder(names, "Tony"));
+console.log(nameFinder2(names, "Tony"));
