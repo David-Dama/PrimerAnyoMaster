@@ -2,7 +2,7 @@
 // dinámicamente en el html que imprima cada uno de los paises.
 const countries1 = ["Japón", "Nicaragua", "Suiza", "Australia", "Venezuela"];
 
-const ul = document.createElement("ul")
+const ul = document.createElement("ul");
 document.body.appendChild(ul);
 
 for (const countrie of countries1) {
@@ -12,15 +12,26 @@ for (const countrie of countries1) {
 }
 
 // 1.2 Elimina el elemento que tenga la clase .fn-remove-me.
-const eliminar = document.querySelector(".fn-remove-me")
+const eliminar = document.querySelector(".fn-remove-me");
 
-eliminar.remove()
+eliminar.remove();
 
 // 1.3 Utiliza el array para crear dinamicamente una lista ul > li de elementos
 // en el div de html con el atributo data-function="printHere".
 const cars = ["Mazda 6", "Ford fiesta", "Audi A4", "Toyota corola"];
 
+const divConDataFunction = document.querySelector(
+  '[data-function="printHere"]',
+);
 
+const ul2 = document.createElement("ul");
+divConDataFunction.appendChild(ul2);
+
+for (const car of cars) {
+  const li = document.createElement("li");
+  li.textContent = car;
+  ul2.appendChild(li);
+}
 
 // 1.4 Crea dinamicamente en el html una serie de divs que contenga un elemento
 // h4 para el titulo y otro elemento img para la imagen.
@@ -32,8 +43,54 @@ const countries2 = [
   { title: "Random title", imgUrl: "https://picsum.photos/300/200?random=5" },
 ];
 
+for (const countrie of countries2) {
+  const div = document.createElement("div");
+  document.body.appendChild(div);
+
+  const h4 = document.createElement("h4");
+  h4.textContent = countrie.title;
+  div.appendChild(h4);
+
+  const img = document.createElement("img");
+  img.src = countrie.imgUrl;
+  div.appendChild(img);
+}
+
 // 1.5 Basandote en el ejercicio anterior. Crea un botón que elimine el último
 // elemento de la serie de divs.
+const botonQueEliminaUltimoDiv = document.createElement("button");
+botonQueEliminaUltimoDiv.textContent = "Eliminar último div";
+document.body.appendChild(botonQueEliminaUltimoDiv);
+
+botonQueEliminaUltimoDiv.addEventListener("click", () => {
+  const todosLosDiv = document.querySelectorAll("div");
+  const ultimoDiv = todosLosDiv[todosLosDiv.length - 1];
+  if (ultimoDiv) ultimoDiv.remove();
+});
+
+//Ya que no entiendo bien el enunciado, no sé si quiere eliminar las imágenes,
+// ya que es el último tipo de elemento de cada div, o el último div completo,
+//a sique haré ambos botones
+const botonQueEliminaImg = document.createElement("button");
+botonQueEliminaImg.textContent = "Eliminar imágenes";
+document.body.appendChild(botonQueEliminaImg);
+
+botonQueEliminaImg.addEventListener("click", () => {
+  const imgs = document.querySelectorAll("div img");
+  imgs.forEach((img) => img.remove());
+});
 
 // 1.6 Basandote en el ejercicio anterior. Crea un botón para cada uno de los
 // divs que elimine ese mismo elemento del html.
+const divs = document.querySelectorAll("div");
+
+divs.forEach((div) => {
+  const boton = document.createElement("button");
+  boton.textContent = "Eliminar este div";
+
+  boton.addEventListener("click", () => {
+    div.remove();
+  });
+
+  div.appendChild(boton);
+});
