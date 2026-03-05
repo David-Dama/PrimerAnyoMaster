@@ -9,3 +9,13 @@ const albums = [
   "Painkiller",
   "Iron Fist",
 ];
+
+const ul = document.createElement("ul");
+
+document.querySelector("main").appendChild(ul);
+
+albums.forEach((album) => {
+  const li = document.createElement("li");
+  li.textContent = album;
+  ul.appendChild(li);
+});
