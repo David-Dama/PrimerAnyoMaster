@@ -386,7 +386,7 @@ header {
 .videosBoxeo {
   width: 95%;
   border-radius: 12px;
-  object-fit: cover;
+  object-fit: contain;
   transition: transform 0.3s;
 }
 
