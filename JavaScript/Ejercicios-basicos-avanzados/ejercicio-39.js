@@ -53,7 +53,7 @@ for (const user of users) {
   // recorremos el objeto
   for (const tipo in user.favoritesSounds) {
     if (numeroDeSonidosFavoritos[tipo] === undefined) {
-      numeroDeSonidosFavoritos[tipo] = 1
+      numeroDeSonidosFavoritos[tipo] = 1;
     } else {
       numeroDeSonidosFavoritos[tipo] += 1;
     }

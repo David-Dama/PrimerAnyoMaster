@@ -9,4 +9,3 @@ URL de la documentación (para que indaguéis): https://thronesapi.com/
 Esta sería la URL final (la que deberéis utilizar para vuestra petición):
 
 https://thronesapi.com/api/v2/Characters*/
-

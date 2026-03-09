@@ -19,7 +19,7 @@ const foodSchedule = [
 for (const comida of foodSchedule) {
   let contadorFrutasUsadas = 0;
 
-  if (comida.isVegan === false){
+  if (comida.isVegan === false) {
     comida.name = fruits[contadorFrutasUsadas++];
     comida.isVegan = true;
   }

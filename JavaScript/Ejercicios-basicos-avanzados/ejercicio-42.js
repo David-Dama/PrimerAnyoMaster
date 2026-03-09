@@ -7,7 +7,7 @@ por otro dentro del array.
 
 Retorna el array resultante.*/
 
-let array = [1, 2, 3, 4, 5]
+let array = [1, 2, 3, 4, 5];
 
 function swap(array, index1, index2) {
   // guardamos temporalmente el valor del primer índice
@@ -23,4 +23,4 @@ function swap(array, index1, index2) {
   return array;
 }
 
-console.log(swap(array,1, 3));
+console.log(swap(array, 1, 3));

@@ -34,35 +34,35 @@ function findArrayIndex(array, text) {
 }
 
 console.log("=======INDICE DE LUKE=======");
-console.log(findArrayIndex(mainCharacters, "Luke"))
+console.log(findArrayIndex(mainCharacters, "Luke"));
 console.log("=======INDICE DE LEIA=======");
-console.log(findArrayIndex(mainCharacters, "Leia"))
+console.log(findArrayIndex(mainCharacters, "Leia"));
 console.log("=======INDICE DE OBI-WAN=======");
-console.log(findArrayIndex(mainCharacters, "Obi-Wan"))
+console.log(findArrayIndex(mainCharacters, "Obi-Wan"));
 
-function eliminarElementosArray(array, text){
+function eliminarElementosArray(array, text) {
   const indice = findArrayIndex(array, text);
   array.splice(indice, 1);
 }
 
 console.log("=======ARRAY COMPLETO=======");
 
-console.log(mainCharacters)
+console.log(mainCharacters);
 
-console.log("=======QUITAMOS A LUKE=======")
+console.log("=======QUITAMOS A LUKE=======");
 
 eliminarElementosArray(mainCharacters, "Luke");
 
 console.log(mainCharacters);
 
-console.log("=======QUITAMOS A LEIA=======")
+console.log("=======QUITAMOS A LEIA=======");
 
-eliminarElementosArray(mainCharacters, "Leia")
+eliminarElementosArray(mainCharacters, "Leia");
 
-console.log(mainCharacters)
+console.log(mainCharacters);
 
 console.log("=======QUITAMOS A OBI-WAN=======");
 
-eliminarElementosArray(mainCharacters, "Obi-Wan")
+eliminarElementosArray(mainCharacters, "Obi-Wan");
 
-console.log(mainCharacters)
+console.log(mainCharacters);

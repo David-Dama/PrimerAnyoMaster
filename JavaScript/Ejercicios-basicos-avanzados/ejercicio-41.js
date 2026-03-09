@@ -22,7 +22,7 @@ function rollDice(numCaras) {
   número de caras al multiplicar, iríamos una cara por delante, por lo que
   ponemos numCaras-1*/
 
-  const numeroRandom = Math.round(Math.random() * (numCaras-1)) +1;
+  const numeroRandom = Math.round(Math.random() * (numCaras - 1)) + 1;
   console.log(numeroRandom);
 }
 
