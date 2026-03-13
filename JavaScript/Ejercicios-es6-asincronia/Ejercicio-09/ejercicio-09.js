@@ -17,3 +17,13 @@ URL: https://pokeapi.co/api/v2/pokemon/1
 Tened en cuenta que esta URL se refiere al pokemon número 1, que es bulbasaur,
 debemos hallar la manera de con una url similar ir consiguiendo pokemons
 aleatorios dentro de unos límites.*/
+
+const numRandom = Math.floor((Math.random() * 151) + 1)
+
+const url = "https://pokeapi.co/api/v2/pokemon/" + numRandom
+
+const imagen = document.getElementsByClassName("random-image")[0]
+
+fetch(url).then(res => res.json()).then((data) => {
+  imagen.src = data.sprites.front_default;
+})
